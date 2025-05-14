@@ -43,6 +43,7 @@ I use Flask as the API server.
     git clone https://github.com/firedragon61/necktie-code.git
     cd necktie-code
     pip -m venv .venv
+    .\.venv\Scripts\activate
     install -r requirements.txt
 
 ## Create the MySQL database, tables and data
