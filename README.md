@@ -26,17 +26,17 @@ I use Flask as the API server.
   - should use non-integer like uuid as ID's for security
 
 # Production Consideration
-1. scalability
+1. Scalability
   - not sure about the business use case, but a production quality API server should be able to sustain high load, meaning a production quality WSGI server should be used instead
-2. hosting platforms
+2. Hosting Platforms
   - ideally the code should be deployed in a headless cloud service that supports Python
 
 # Assumptions
 1. creating a doctor object with relationships to addresses, names etc is counterintuitive from the point of view of business
-  1. The "price policy" (eg include 5 days of Western medicine) is not predefined. Creating a new doctor object with any new price policy will result in a new price policy even though the description may be the same an an existing price policy. This looks wrong.
-  2. The "category" is not predefined (see point (1)) and is created for every new doctor object. It probably should be predefined and doctor objects are mapped to certain predefined categories.
-  3. Addresses are assumed to be unique to each doctor object so every time a new address is always created if it is defined.
-  4. The database is always up and available. There is no error handling in the code if the database is down.
+2. The "price policy" (eg include 5 days of Western medicine) is not predefined. Creating a new doctor object with any new price policy will result in a new price policy even though the description may be the same an an existing price policy. This looks wrong.
+3. The "category" is not predefined (see point (1)) and is created for every new doctor object. It probably should be predefined and doctor objects are mapped to certain predefined categories.
+4. Addresses are assumed to be unique to each doctor object so every time a new address is always created if it is defined.
+5. The database is always up and available. There is no error handling in the code if the database is down.
 
 # Technical Setup
 ## Install the code
@@ -44,6 +44,9 @@ I use Flask as the API server.
     cd necktie-code
     pip -m venv .venv
     install -r requirements.txt
+
+## Create the MySQL database, tables and data
+    sudo mysql -u root < db.sql
 
 ## Start the flask application in a vscode terminal under Windows
     $env:DEV_DATABASE_URL='mysql+mysqlconnector://necktie_admin:welcome1@localhost:3306/necktie'
