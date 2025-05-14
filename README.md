@@ -18,12 +18,15 @@ I use Flask as the API server.
   - phone format
   - price range
   - ...etc
-2. no security on the API endpoints
-  - implement authentication based on json web token
+2. no non-functional features were implemented
+  - no authentication on the API endpoints
+  - no rate limiting functionality
 3. not optimal database schema design
   - without knowing the actual business use case, some tables are probably designed incorrectly, for example business hours may need to be designed for filtering based on opening days or hours
   - no indices created on certain fields for performance
   - should use non-integer like uuid as ID's for security
+4. test cases are not comprehensive that cover every column in each model
+5. no error handling
 
 # Production Consideration
 1. Scalability
@@ -39,7 +42,7 @@ I use Flask as the API server.
 5. The database is always up and available. There is no error handling in the code if the database is down.
 
 # Technical Setup
-## Install the code
+## Install the code under Windows
     git clone https://github.com/firedragon61/necktie-code.git
     cd necktie-code
     pip -m venv .venv
