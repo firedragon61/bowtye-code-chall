@@ -43,7 +43,7 @@ I use Flask as the API server.
 
 # Technical Setup
 ## Install the code under Windows
-    git clone https://github.com/firedragon61/necktie-code.git
+    git clone https://github.com/firedragon61/Shiu_Kau_Wong_Senior_Backend_Engineer_Technical_Assessment.git
     cd necktie-code
     pip -m venv .venv
     .\.venv\Scripts\activate
